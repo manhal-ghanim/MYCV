@@ -3,57 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منهل غانم عطية | مطور ويب ومختص نظم وبيانات</title>
-    <!-- ربط ملف التنسيقات cv.css -->
+    <title>منهل غانم عطية | مطور ويب ومختص نظم وبيانات ميدانية</title>
+    <meta name="description" content="منهل غانم عطية - خريج نظم معلومات إدارية (MIS)، مطور ويب وأنظمة برمجية، ومختص جمع بيانات ميدانية ودعم نفسي اجتماعي (MEAL / PSS).">
+    <meta name="author" content="منهل غانم عطية">
+    <meta property="og:title" content="منهل غانم عطية | مطور ويب ومختص نظم وبيانات">
+    <meta property="og:description" content="خريج نظم معلومات إدارية ومطور ويب وأنظمة برمجية، ومختص MEAL ودعم نفسي اجتماعي.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     <link rel="stylesheet" href="cv.css">
-    <!-- أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- شريط التقدم عند التمرير -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <!-- شريط التنقل -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#about" class="logo">
                 <i class="fa-solid fa-code"></i> منهل غانم
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">عنّي</a></li>
                 <li><a href="#skills">المهارات</a></li>
+                <li><a href="#certificates">الشهادات</a></li>
                 <li><a href="#projects">المشاريع</a></li>
                 <li><a href="#experience">الخبرات</a></li>
                 <li><a href="#contact">تواصل معي</a></li>
             </ul>
-            <a href="#contact" class="btn-primary">تواصل مباشر</a>
+            <a href="#contact" class="btn-primary desktop-only">تواصل مباشر</a>
+            <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- واجهة الترحيب -->
     <header class="hero" id="about">
+        <div class="hero-blob blob-1" aria-hidden="true"></div>
+        <div class="hero-blob blob-2" aria-hidden="true"></div>
         <div class="hero-text">
             <div class="badge">
                 <i class="fa-solid fa-circle-check"></i> مطور نظم ويب ومختص جمع وإدارة بيانات ميدانية
             </div>
             <h1>أهلاً، أنا <span class="highlight">منهل غانم عطية</span></h1>
+            <p class="typed-line">
+                <span id="typedText"></span><span class="cursor-blink">|</span>
+            </p>
             <p>
                 خريج نظم معلومات إدارية (MIS) ومطور برمجيات وأنظمة ويب، أجمع بين الكفاءة التقنية في تصميم الأنظمة الذكية وتطوير روبوتات المحادثة، والخبرة الميدانية في جمع البيانات وإدارة برامج الدعم النفسي الاجتماعي (PSS/MEAL).
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary"><i class="fa-solid fa-laptop-code"></i> استعراض المشاريع</a>
                 <a href="#contact" class="btn-secondary"><i class="fa-solid fa-envelope"></i> تواصل معي</a>
+                <a href="Manhal-Ghanim-CV.pdf" class="btn-outline" download>
+                    <i class="fa-solid fa-download"></i> تحميل السيرة الذاتية
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://wa.me/9647761621886" target="_blank" rel="noopener" class="social-icon whatsapp" aria-label="تواصل عبر واتساب">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/dr9.z" target="_blank" rel="noopener" class="social-icon instagram" aria-label="حسابي على إنستغرام">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
         </div>
         <div class="hero-card">
             <div class="profile-box">
-                <img src="profile.JPG" class="profile-img">
+                <img src="profile.jpg" class="profile-img" alt="منهل غانم عطية" loading="eager">
                 <h3>منهل غانم عطية</h3>
-                <p class="location-text">الموصل، العراق</p>
+                <p class="location-text"><i class="fa-solid fa-location-dot"></i> الموصل - القيارة، العراق</p>
                 <div class="sub-title">
                     MIS Graduate & Web Developer
+                </div>
+                <div class="profile-tags">
+                    <span>MEAL</span>
+                    <span>Kobo Toolbox</span>
+                    <span>PSS</span>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- إحصائيات سريعة -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-box reveal">
+                <div class="stat-number" data-target="8" data-suffix="+">0</div>
+                <div class="stat-label">سنوات خبرة مهنية متنوعة</div>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                <div class="stat-label">مستفيد دعم نفسي اجتماعي</div>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-number" data-target="3" data-suffix="">0</div>
+                <div class="stat-label">أنظمة ويب مطوّرة</div>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-number" data-target="11" data-suffix="">0</div>
+                <div class="stat-label">دورة وشهادة تدريبية معتمدة</div>
+            </div>
+        </div>
+    </section>
 
     <!-- المهارات -->
     <section class="dark-section" id="skills">
@@ -63,20 +118,20 @@
                 <p>مزيج متكامل من الأدوات التقنية والقدرات الميدانية والتحليلية</p>
             </div>
             <div class="cards-grid">
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <div class="card-icon"><i class="fa-solid fa-code"></i></div>
                         <h3>تطوير البرمجيات والنظم</h3>
                         <ul>
                             <li><i class="fa-solid fa-check"></i> تصميم وتطوير مواقع الويب (Web Development)</li>
                             <li><i class="fa-solid fa-check"></i> تصميم وتحليل النظم (Systems Design)</li>
-                            <li><i class="fa-solid fa-check"></i> بناء وتكامل قواعد البيانات</li>
+                            <li><i class="fa-solid fa-check"></i> بناء وتكامل قواعد البيانات (Database Management)</li>
                             <li><i class="fa-solid fa-check"></i> أنظمة الذكاء الاصطناعي الأكاديمية (AI Chat Systems)</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <div class="card-icon"><i class="fa-solid fa-database"></i></div>
                         <h3>إدارة البيانات والمتابعة (MEAL)</h3>
@@ -84,17 +139,17 @@
                             <li><i class="fa-solid fa-check"></i> جمع البيانات الرقمية عبر Kobo Toolbox</li>
                             <li><i class="fa-solid fa-check"></i> مايكروسوفت إكسل المتقدم (Advanced Excel)</li>
                             <li><i class="fa-solid fa-check"></i> توثيق قصص النجاح وتقييم الأثر الميداني</li>
-                            <li><i class="fa-solid fa-check"></i> إعداد التقارير الإحصائية ومتابعة المستفيدين</li>
+                            <li><i class="fa-solid fa-check"></i> Microsoft Word / Access / PowerPoint</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <div class="card-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
                         <h3>الدعم النفسي وإدارة العمليات</h3>
                         <ul>
-                            <li><i class="fa-solid fa-check"></i> تيسير جلسات الدعم النفسي الاجتماعي (PSS / PM+)</li>
+                            <li><i class="fa-solid fa-check"></i> تيسير جلسات الدعم النفسي الاجتماعي (PSS / Group PM+)</li>
                             <li><i class="fa-solid fa-check"></i> المتابعة الميدانية والزيارات المنزلية</li>
                             <li><i class="fa-solid fa-check"></i> إدارة العمليات والمخزون والتنبؤ بالميزانيات</li>
                             <li><i class="fa-solid fa-check"></i> أساسيات الأمن السيبراني وحماية النظم</li>
@@ -102,18 +157,104 @@
                     </div>
                 </div>
             </div>
+
+            <!-- اللغات -->
+            <div class="languages-box reveal">
+                <h3><i class="fa-solid fa-language"></i> اللغات</h3>
+                <div class="lang-item">
+                    <div class="lang-top">
+                        <span>العربية</span>
+                        <span class="lang-level">اللغة الأم</span>
+                    </div>
+                    <div class="lang-bar"><div class="lang-fill" data-percent="100"></div></div>
+                </div>
+                <div class="lang-item">
+                    <div class="lang-top">
+                        <span>الإنجليزية</span>
+                        <span class="lang-level">متوسط</span>
+                    </div>
+                    <div class="lang-bar"><div class="lang-fill" data-percent="60"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الشهادات والدورات -->
+    <section id="certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2>الشهادات والدورات التدريبية</h2>
+                <p>مسار تعلّم مستمر يغطي الأمن السيبراني، الدعم النفسي، والمهارات التقنية</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-briefcase-medical"></i>
+                    <h4>First Aid Course</h4>
+                    <span>S.T.Y.O.D</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Protect Systems From Penetrations</h4>
+                    <span>EDRAAK</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-lock"></i>
+                    <h4>Cybersecurity</h4>
+                    <span>EDRAAK</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <h4>Microsoft Excel Professional Level</h4>
+                    <span>S.T.Y.O.D</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-comments"></i>
+                    <h4>English Language Conversation</h4>
+                    <span>S.T.Y.O.D</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                    <h4>Psychosocial Well-being Of Refugees</h4>
+                    <span>EDRAAK</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-palette"></i>
+                    <h4>HEART: Healing And Education Through The Arts</h4>
+                    <span>Save the Children</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-people-roof"></i>
+                    <h4>Safe Families Program</h4>
+                    <span>Save the Children</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-user-group"></i>
+                    <h4>Group Problem Management Plus (Group PM+)</h4>
+                    <span>Save the Children</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-house-laptop"></i>
+                    <h4>Home Based Training</h4>
+                    <span>Save the Children</span>
+                </div>
+                <div class="cert-card reveal">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h4>Personal Safety and Security</h4>
+                    <span>Save the Children</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- المشاريع -->
-    <section id="projects">
+    <section class="dark-section" id="projects">
         <div class="container">
             <div class="section-header">
                 <h2>المشاريع والحلول الرقمية</h2>
                 <p>نماذج من المنظومات البرمجية وحلول البيانات المنجزة</p>
             </div>
             <div class="cards-grid">
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <span class="tag">نظام أكاديمي</span>
                         <h3>منظومة مؤشرات الأداء الأكاديمي</h3>
@@ -125,7 +266,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <span class="tag">ذكاء اصطناعي</span>
                         <h3>المرشد الأكاديمي الذكي (AI Chatbot)</h3>
@@ -137,7 +278,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card reveal">
                     <div>
                         <span class="tag">محاكاة مالية</span>
                         <h3>منصة محاكاة توزيع الموازنات الحكومية</h3>
@@ -149,50 +290,88 @@
                     </div>
                 </div>
             </div>
+
+            <!-- الإنجازات -->
+            <div class="achievements-box reveal">
+                <h3><i class="fa-solid fa-trophy"></i> إنجازات إضافية</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>المشاركة في برنامج التسويق الدولي مع جامعة Lindenwood (الولايات المتحدة) — إنهاء فصلين دراسيين تعاونيين.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <p>تطوير عدة منصات رقمية تعليمية وبيانية لخدمة الطلبة والأقسام الأكاديمية.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <p>جمع وتوثيق بيانات ميدانية شاملة باستخدام Kobo Toolbox ضمن أنشطة الدعم النفسي الاجتماعي.</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <p>توثيق قصص نجاح المستفيدين وإبراز الأثر الإيجابي لتدخلات الدعم النفسي.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- المسار المهني -->
-    <section class="dark-section" id="experience">
+    <section id="experience">
         <div class="container">
             <div class="section-header">
                 <h2>المسار المهني والأكاديمي</h2>
                 <p>تسلسل الخبرات العملية والمؤهلات الأكاديمية</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-box">
                         <span class="timeline-date">2022 - 2026</span>
-                        <h3>مطور ويب ومصمم نظم | Freelance</h3>
-                        <p>تصميم وبناء الأنظمة البرمجية وقواعد البيانات وتطوير الواجهات والمنصات الذكية للمؤسسات الأكاديمية والمشاريع المخصصة.</p>
+                        <h3>مطور ويب ومصمم نظم | Freelance Projects</h3>
+                        <ul class="timeline-list">
+                            <li>تطوير نظام ويب لمؤشرات الأداء الأكاديمي لأقسام جامعة الموصل لدعم القرارات المبنية على البيانات.</li>
+                            <li>تصميم وتنفيذ روبوت محادثة أكاديمي مدعوم بالذكاء الاصطناعي لدعم طلاب MIS من المرحلة الأولى حتى الدكتوراه.</li>
+                            <li>بناء منصة لمحاكاة توزيع الموازنات الحكومية باستخدام نماذج بيانات منظمة ولوحات تقارير.</li>
+                            <li>العمل على تحليل النظم، تكامل قواعد البيانات، وتطوير واجهات المستخدم.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-box">
                         <span class="timeline-date">2026</span>
                         <h3>أخصائي دعم نفسي وميداني (PSS Worker) | SEDO</h3>
-                        <p>تقديم خدمات الدعم لأكثر من 50 مستفيداً، تيسير جلسات PM+، وجمع البيانات الميدانية باستخدام Kobo Toolbox وتوثيق قصص النجاح.</p>
+                        <ul class="timeline-list">
+                            <li>تقديم خدمات دعم نفسي اجتماعي منظمة لأكثر من 50 مستفيداً، بما في ذلك إدارة حالتين معقدتين وتيسير مبادرتين مجتمعيتين.</li>
+                            <li>إجراء زيارات منزلية ومتابعة ميدانية لتقييم الاحتياجات وتوثيق تقدّم المستفيدين.</li>
+                            <li>جمع البيانات الميدانية عبر Kobo Toolbox وضمان دقة واكتمال استمارات المستفيدين.</li>
+                            <li>تيسير جلسات Group Problem Management Plus (Group PM+) والحفاظ على سجلات دقيقة للمشاركين.</li>
+                            <li>توثيق قصص نجاح المستفيدين لإبراز أثر خدمات الدعم النفسي الاجتماعي.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
                     <div class="timeline-box">
                         <span class="timeline-date">2018 - 2021</span>
                         <h3>مدير فرع ومتجر (Store Manager) | Retail Market</h3>
-                        <p>إدارة العمليات اليومية والمخزون، وإعداد التقارير المالية الشهرية، والمساهمة في رفع دقة التنبؤ بالميزانيات بنسبة 25%.</p>
+                        <ul class="timeline-list">
+                            <li>إدارة العمليات اليومية والمخزون وخدمة الزبائن.</li>
+                            <li>إعداد تقارير مبيعات شهرية دقيقة وسجلات مالية، ساهمت في تحسين دقة التنبؤ بالميزانية بنسبة 25%.</li>
+                            <li>تحسين كفاءة سير العمل والتنسيق مع الموردين.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item reveal">
                     <div class="timeline-dot dot-green"></div>
                     <div class="timeline-box">
-                        <span class="timeline-date" style="color: #34d399;">2021 - 2025</span>
+                        <span class="timeline-date" style="color:#34d399;">2021 - 2025</span>
                         <h3>بكالوريوس نظم المعلومات الإدارية (MIS)</h3>
-                        <p>كلية الإدارة والاقتصاد - جامعة الموصل</p>
+                        <p>كلية الإدارة والاقتصاد - جامعة الموصل، الموصل، العراق</p>
                     </div>
                 </div>
             </div>
@@ -214,6 +393,15 @@
                 <a href="tel:+9647727795507" class="contact-btn" dir="ltr">
                     <i class="fa-solid fa-phone" style="color: var(--teal-primary);"></i> +964 772 779 5507
                 </a>
+                <a href="https://wa.me/9647761621886" target="_blank" rel="noopener" class="contact-btn" dir="ltr">
+                    <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> +964 776 162 1886
+                </a>
+                <a href="https://instagram.com/dr9.z" target="_blank" rel="noopener" class="contact-btn">
+                    <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> dr9.z@
+                </a>
+                <a href="Manhal-Ghanim-CV.pdf" class="contact-btn" download>
+                    <i class="fa-solid fa-file-arrow-down" style="color: var(--teal-primary);"></i> تحميل PDF
+                </a>
             </div>
 
             <div class="copy">
@@ -222,5 +410,10 @@
         </div>
     </footer>
 
+    <a href="#about" class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
